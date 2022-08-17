@@ -138,41 +138,6 @@ MainWindow::triggerHotkey()
     
     auto executor = HotkeyExecutor{};
     executor.execute(hotkeyItem);
-
-    // Uses a hard-coded WIN+ALT+PRNT to trigger the Xbox Game Bar screenshot
-    // feature.
-    // TODO Replace with selection of pre-defined hotkeys.
-//    auto input1 = INPUT{};
-//    input1.type = INPUT_KEYBOARD;
-//    input1.ki.wVk = VK_LWIN;
-
-//    auto input2 = INPUT{};
-//    input2.type = INPUT_KEYBOARD;
-//    input2.ki.wVk = VK_MENU;
-
-//    auto input3 = INPUT{};
-//    input3.type = INPUT_KEYBOARD;
-//    input3.ki.wVk = VK_SNAPSHOT;
-
-//    auto input4 = INPUT{};
-//    input4.type = INPUT_KEYBOARD;
-//    input4.ki.wVk = VK_LWIN;
-//    input4.ki.dwFlags = KEYEVENTF_KEYUP;
-
-//    auto input5 = INPUT{};
-//    input5.type = INPUT_KEYBOARD;
-//    input5.ki.wVk = VK_MENU;
-//    input5.ki.dwFlags = KEYEVENTF_KEYUP;
-
-//    auto input6 = INPUT{};
-//    input6.type = INPUT_KEYBOARD;
-//    input6.ki.wVk = VK_SNAPSHOT;
-//    input6.ki.dwFlags = KEYEVENTF_KEYUP;
-
-//    INPUT inputs[] = {input1, input2, input3, input4, input5, input6};
-//    auto result = SendInput(6, inputs, sizeof(INPUT));
-
-//    qDebug() << "Sending Windows key-press event returned " << result;
 }
 
 void

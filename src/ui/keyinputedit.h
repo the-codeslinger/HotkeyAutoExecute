@@ -10,19 +10,41 @@
 #include <hotkeyitem.h>
 #include <nativekeysequence.h>
 
+/**
+ * A custom implementation of `QKeySequenceEdit` for two reasons:
+ * 
+ * \li Restrict the input to only one hotkey sequence.
+ * \li Intercept the `QWidget::keyPressEvent(QKeyEvent*)` to gain access to the 
+ *     platform-native key and modifier codes.
+ * 
+ * Other than that, the base implementation is used.
+ */
 class KeyInputEdit : public QKeySequenceEdit {
     Q_OBJECT
 public:
+    /**
+     * Construct a new KeyInputEdit object. This construcor only forwards to the base
+     * class.
+     */
     KeyInputEdit(QWidget* parent = nullptr)
-        : QKeySequenceEdit(parent) {
-        
-    }
+        : QKeySequenceEdit(parent)
+    {}
     
+    /**
+     * Access the native key codes of the hotkey keq sequence.
+     */
     NativeKeySequence nativeKeySequence() const {
         return nativeSequence_;
     }
     
 protected:
+    /**
+     * Overrides the base class version to access the `QKeyEvent` that contains 
+     * platform-specific key codes.
+     * 
+     * This method also sets the only available key sequence to limit the total number
+     * of key sequence from four to only one.
+     */
     void keyPressEvent(QKeyEvent* event) {
         
         auto key = event->nativeVirtualKey();
