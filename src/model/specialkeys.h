@@ -2,6 +2,13 @@
 
 #include <Qt>
 
+/**
+ * This class is a direct representation of the manually selected special keys in the 
+ * `MainWindow`. The values of the radio boxes are stored in booleans that can be 
+ * converted into Windows virtual key codes.
+ * 
+ * https://docs.microsoft.com/de-de/windows/win32/inputdev/virtual-key-codes
+ */
 struct SpecialKeys
 {
     bool print;
