@@ -56,4 +56,3 @@ HotkeyExecutor::createKeyRelease(quint32 windowsKeyCode) const
     keyRelease.ki.dwFlags = KEYEVENTF_KEYUP;
     return keyRelease;
 }
-
