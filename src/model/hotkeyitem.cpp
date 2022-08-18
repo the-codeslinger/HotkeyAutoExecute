@@ -30,7 +30,7 @@ HotkeyItem::mergeNativeSequenceAndSpecials(
         const SpecialModifiers& modifiers,
         const SpecialKeys& keys) 
 {
-    // Dupicates will be filtered by the QSet.
+    // Duplicates will be filtered by the QSet.
     nativeSequence.modifiers.unite(modifiers.combinedCode());
     // Only one key can be active. This is enforced by the UI. OR-ing both
     // values delivers either the "normal" key or the "special" one.
