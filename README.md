@@ -74,7 +74,7 @@ The basis of this little utility is the Qt framework in version 6.3, and the
 compiler of choice is the MinGW suite of tools.
 
 There is some technical drama to the implementation, and the story behind that
-can be found in a blog post (TODO).
+can be found in a [blog post][blog].
 
 ## A Peek Into the Crystal Ball
 
@@ -99,3 +99,4 @@ Because of these minor flaws, I did not yet give it a 1.0 version number. It is
 [agsc]: https://the-codeslinger.com/2020/08/15/automate-game-screenshot-capture-windows-api-sendinput-function-with-c/
 [sndi]: https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-sendinput#remarks
 [wrkt]: https://github.com/the-codeslinger/WorkTracker
+[blog]: http://the-codeslinger.com/2022/08/20/convert-qkeysequence-of-qkeysequenceedit-to-native-windows-virtual-key-codes-vk_/
