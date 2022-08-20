@@ -1,5 +1,3 @@
-#include <windows.h>
-
 #include <QDir>
 #include <QTimer>
 #include <QMessageBox>
@@ -8,7 +6,6 @@
 
 #include <mainwindow.h>
 #include <hotkeyitem.h>
-#include <hotkeyexecutor.h>
 #include "ui_mainwindow.h"
 
 static const QString TIME_UNIT_MINUTES = QObject::tr("Minutes");
@@ -20,12 +17,14 @@ static const int MINUTES_MULTIPLIER = 60 * SECONDS_MULTIPLIER;
 MainWindow::MainWindow(
         HotkeyConfigWriter* configWriter,
         HotkeyConfigReader* configReader,
+        HotkeyExecutor* executor,
         QWidget *parent)
     : QMainWindow(parent)
     , ui_(new Ui::MainWindow)
     , availableHotkeysModel_(new QStandardItemModel())
     , configWriter_(configWriter)
     , configReader_(configReader)
+    , executor_(executor)
 {
     ui_->setupUi(this);
     ui_->timeUnitBox->addItem(TIME_UNIT_MINUTES);
@@ -50,6 +49,7 @@ MainWindow::~MainWindow()
     delete configWriter_;
     delete configReader_;
     delete availableHotkeysModel_;
+    delete executor_;
 }
 
 void 
@@ -136,8 +136,9 @@ MainWindow::triggerHotkey()
     auto item = availableHotkeysModel_->data(index, Qt::UserRole + 1);
     auto hotkeyItem = qvariant_cast<HotkeyItem>(item);
     
-    auto executor = HotkeyExecutor{};
-    executor.execute(hotkeyItem);
+    if (nullptr != executor_) {
+        executor_->execute(hotkeyItem);
+    }
 }
 
 void

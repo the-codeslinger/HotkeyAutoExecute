@@ -20,26 +20,33 @@ SOURCES += \
     src/model/hotkeyitem.cpp \
     src/util/hotkeyconfigreader.cpp \
     src/util/hotkeyconfigwriter.cpp \
-    src/util/hotkeyexecutor.cpp \
-    src/ui/mainwindow.cpp
+    src/ui/mainwindow.cpp \
+
+win32 {
+    SOURCES += \
+        src/util/hotkeyexecutor_win.cpp
+}
 
 HEADERS += \
     src/model/nativekeysequence.h \
     src/model/specialkeys.h \
     src/model/specialmodifiers.h \
-    src/system/qtwindowskeymapping.h \
+    src/model/hotkeyitem.h \
     src/ui/keyinputedit.h \
     src/util/hotkeyconfigreader.h \
     src/util/hotkeyconfigwriter.h \
     src/util/hotkeyexecutor.h \
-    src/model/hotkeyitem.h \
-    src/ui/mainwindow.h
+    src/ui/mainwindow.h \
+    
+win32 {
+    HEADERS += \
+        src/util/hotkeyexecutor_win.h
+}
 
 INCLUDEPATH += \
     src/util \
     src/model \
-    src/ui \
-    src/system
+    src/ui 
 
 FORMS += \
     ui/mainwindow.ui
