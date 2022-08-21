@@ -1,6 +1,6 @@
 #pragma once
 
-class HotkeyItem;
+struct HotkeyItem;
 
 class HotkeyExecutor
 {
