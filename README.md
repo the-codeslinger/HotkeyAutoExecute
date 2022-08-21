@@ -92,7 +92,7 @@ The application does not have an icon, and the question mark icons I use for
 help I have repurposed verbatim from my [WorkTracker][wrkt] utility.
 
 Maybe I could find a way to improve the UX or do some refactoring to improve the
-class and method naming. The development was palgued by chasing problems and
+class and method naming. The development was plagued by chasing problems and
 solutions. Therefore, some details have been left unpolished in the pursuit of a
 working implementation.
 
