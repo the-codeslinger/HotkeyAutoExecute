@@ -55,7 +55,7 @@ struct HotkeyItem
     HotkeyItem(
             const QString& hotkeyName,
             const QString& hotkeySequence,
-            NativeKeySequence nativeHotkeySequence,
+            const NativeKeySequence& nativeHotkeySequence,
             const SpecialModifiers& modifiers,
             const SpecialKeys& keys);
     
@@ -70,7 +70,7 @@ struct HotkeyItem
     HotkeyItem(
             const QString& hotkeyName, 
             const QString& hotkeySequence,
-            NativeKeySequence nativeHotkeySequence);
+            const NativeKeySequence& nativeHotkeySequence);
     
     // The following constructors and methods are required for QVariant.
     HotkeyItem() = default;

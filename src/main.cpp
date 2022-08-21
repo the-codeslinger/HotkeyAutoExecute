@@ -5,6 +5,12 @@
 #include <QApplication>
 #include <QStandardPaths>
 
+#include <hotkeyexecutor.h>
+
+#ifdef Q_OS_WIN
+    #include <hotkeyexecutor_win.h>
+#endif
+
 static QString CONFIG_FILENAME = "hotkeys.json";
 
 QString createConfigDir()
@@ -46,7 +52,12 @@ int main(int argc, char *argv[])
     auto configWriter = new HotkeyConfigWriter(configFilename);
     auto configReader = new HotkeyConfigReader(configFilename);
     
-    MainWindow w{configWriter, configReader};
+    HotkeyExecutor* executor = nullptr;
+#ifdef Q_OS_WIN
+    executor = new HotkeyExecutor_Win{};
+#endif
+    
+    MainWindow w{configWriter, configReader, executor};
     w.show();
     return a.exec();
 }

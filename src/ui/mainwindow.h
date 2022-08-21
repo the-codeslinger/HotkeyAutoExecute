@@ -9,6 +9,7 @@
 #include <specialmodifiers.h>
 #include <hotkeyconfigreader.h>
 #include <hotkeyconfigwriter.h>
+#include <hotkeyexecutor.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -36,6 +37,7 @@ public:
     MainWindow(
             HotkeyConfigWriter* configWriter,
             HotkeyConfigReader* configReader,
+            HotkeyExecutor* executor,
             QWidget *parent = nullptr);
     ~MainWindow();
 
@@ -68,6 +70,7 @@ private:
     
     HotkeyConfigWriter* configWriter_;
     HotkeyConfigReader* configReader_;
+    HotkeyExecutor* executor_;
 
     void startHotkeyInterval();
     void stopHotkeyInterval();

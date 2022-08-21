@@ -1,7 +1,5 @@
 #pragma once
 
-#include <windows.h>
-
 #include <QSet>
 #include <QDebug>
 #include <QKeyEvent>
