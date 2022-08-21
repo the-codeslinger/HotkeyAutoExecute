@@ -66,12 +66,17 @@ to make it work.
 
 Do not let the screenshot fool you into thinking HotkeyAutoExecute is
 multi-platform. It has a monogamous relationship with the Windows operating
-system, and the screenshot was taken using the preview feature of Qt Creator on
-macOS. I have tested it on Windows 11, and I am confident it will work on
+system. The screenshot was taken using the preview feature of Qt Creator on
+macOS. The application can also be compiled and started on other operating
+systems. It cannot emulate hotkey presses, however. This is a Windows-only
+feature.
+
+I have tested the application on Windows 11, and I am confident it will work on
 Windows 10 as well. I developed the initial solution on Windows 10, after all.
 
 The basis of this little utility is the Qt framework in version 6.3, and the
-compiler of choice is the MinGW suite of tools.
+compiler of choice used for the binaries in the [Releases section][rels] is the
+MinGW suite of tools.
 
 There is some technical drama to the implementation, and the story behind that
 can be found in a [blog post][blog].
@@ -83,14 +88,13 @@ What does the future hold for HotkeyAutoExecute?
 I cannot say. Right now, it does exactly what I need, and it took me two years
 since my first attempt to solve the problem before I added some polish to it.
 Nevertheless, it can still benefit from a few sprinkles of love here and there.
-For example, while writing this blog post, I noticed that the window still says
-“Main Window” instead of HotkeyAutoExecute 🤦. The application does not have an
-icon, and the question mark icons I use for help I have repurposed verbatim from
-my [WorkTracker][wrkt] utility.
+The application does not have an icon, and the question mark icons I use for
+help I have repurposed verbatim from my [WorkTracker][wrkt] utility.
 
-Maybe I could find a way to improve the UX or do some refactoring to make it at
-least compilable on other platforms. This way, I could develop visual features
-without needing my Windows box.
+Maybe I could find a way to improve the UX or do some refactoring to improve the
+class and method naming. The development was palgued by chasing problems and
+solutions. Therefore, some details have been left unpolished in the pursuit of a
+working implementation.
 
 Because of these minor flaws, I did not yet give it a 1.0 version number. It is
 0.8.0 for now.
@@ -100,3 +104,4 @@ Because of these minor flaws, I did not yet give it a 1.0 version number. It is
 [sndi]: https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-sendinput#remarks
 [wrkt]: https://github.com/the-codeslinger/WorkTracker
 [blog]: http://the-codeslinger.com/2022/08/20/convert-qkeysequence-of-qkeysequenceedit-to-native-windows-virtual-key-codes-vk_/
+[rels]: https://github.com/the-codeslinger/HotkeyAutoExecute/releases
