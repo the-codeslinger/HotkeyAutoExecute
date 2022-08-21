@@ -5,7 +5,7 @@
 class QJsonObject;
 class QStandardItemModel;
 
-class HotkeyItem;
+struct HotkeyItem;
 
 /**
  * Writes the hotkey settings the user created to a JSON file.

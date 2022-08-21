@@ -3,7 +3,7 @@
 HotkeyItem::HotkeyItem(
         const QString& hotkeyName,
         const QString& hotkeySequence,
-        NativeKeySequence nativeHotkeySequence,
+        const NativeKeySequence& nativeHotkeySequence,
         const SpecialModifiers& modifiers,
         const SpecialKeys& keys)
     : name(hotkeyName)
@@ -16,7 +16,7 @@ HotkeyItem::HotkeyItem(
 HotkeyItem::HotkeyItem(
         const QString& hotkeyName, 
         const QString& hotkeySequence,
-        NativeKeySequence nativeHotkeySequence)
+        const NativeKeySequence& nativeHotkeySequence)
     : name(hotkeyName)
     , sequenceText(hotkeySequence)
     , nativeSequence(nativeHotkeySequence)

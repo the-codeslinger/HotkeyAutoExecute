@@ -2,11 +2,11 @@
 #include <QKeyEvent>
 #include <QKeySequence>
 
-#include <hotkeyexecutor.h>
+#include <hotkeyexecutor_win.h>
 #include <hotkeyitem.h>
 
 void
-HotkeyExecutor::execute(const HotkeyItem& hotkey) const
+HotkeyExecutor_Win::execute(const HotkeyItem& hotkey) const
 {    
     auto keys = parseHotkey(hotkey);
     auto result = SendInput(keys.count(), keys.data(), sizeof(INPUT));
@@ -17,7 +17,7 @@ HotkeyExecutor::execute(const HotkeyItem& hotkey) const
 }
 
 QVector<INPUT>
-HotkeyExecutor::parseHotkey(const HotkeyItem& hotkey) const
+HotkeyExecutor_Win::parseHotkey(const HotkeyItem& hotkey) const
 {
     auto windowsKey = hotkey.nativeSequence.key;
     auto windowsModifiers = hotkey.nativeSequence.modifiers;
@@ -39,7 +39,7 @@ HotkeyExecutor::parseHotkey(const HotkeyItem& hotkey) const
 }
 
 INPUT 
-HotkeyExecutor::createKeyPress(quint32 windowsKeyCode) const
+HotkeyExecutor_Win::createKeyPress(quint32 windowsKeyCode) const
 {
     auto keyPress = INPUT{};
     keyPress.type = INPUT_KEYBOARD;
@@ -48,7 +48,7 @@ HotkeyExecutor::createKeyPress(quint32 windowsKeyCode) const
 }
 
 INPUT 
-HotkeyExecutor::createKeyRelease(quint32 windowsKeyCode) const
+HotkeyExecutor_Win::createKeyRelease(quint32 windowsKeyCode) const
 {        
     auto keyRelease = INPUT{};
     keyRelease.type = INPUT_KEYBOARD;
