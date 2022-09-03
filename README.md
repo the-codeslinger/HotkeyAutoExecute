@@ -88,16 +88,11 @@ What does the future hold for HotkeyAutoExecute?
 I cannot say. Right now, it does exactly what I need, and it took me two years
 since my first attempt to solve the problem before I added some polish to it.
 Nevertheless, it can still benefit from a few sprinkles of love here and there.
-The application does not have an icon, and the question mark icons I use for
-help I have repurposed verbatim from my [WorkTracker][wrkt] utility.
+For example, the question mark icons I use for help I have repurposed verbatim 
+from my [WorkTracker][wrkt] utility. Maybe I could find a way to improve the UX.
 
-Maybe I could find a way to improve the UX or do some refactoring to improve the
-class and method naming. The development was plagued by chasing problems and
-solutions. Therefore, some details have been left unpolished in the pursuit of a
-working implementation.
-
-Because of these minor flaws, I did not yet give it a 1.0 version number. It is
-0.8.0 for now.
+The tool is functional, though, and I never planned to create a beautiful 
+application. In the end, it is a small niche utility that only I use 😉.
 
 
 [agsc]: https://the-codeslinger.com/2020/08/15/automate-game-screenshot-capture-windows-api-sendinput-function-with-c/
