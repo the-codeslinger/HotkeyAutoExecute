@@ -22,7 +22,7 @@ struct SpecialModifiers
      * Evaluate the class properties and create a `QSet` that contains the Windows
      * virtual key codes of the ones that are set to \c true.
      */
-    QSet<quint32> combinedCode() const {
+    QSet<quint32> codes() const {
         auto modifiers = QSet<quint32>{};
         if (shift) {
             modifiers.insert(LEFT_SHIFT_KEY);
