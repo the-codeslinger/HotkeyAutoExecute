@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>icon/Help.svg</file>
         <file>icon/Icon.jpg</file>
+        <file>icon/About-Qt.svg</file>
     </qresource>
 </RCC>

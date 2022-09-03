@@ -16,6 +16,10 @@
   <property name="windowTitle">
    <string>HotkeyAutoExecute</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../resource/icons.qrc">
+    <normaloff>:/icon/Icon.jpg</normaloff>:/icon/Icon.jpg</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout" columnstretch="1,0">
     <item row="0" column="0">
@@ -288,11 +292,27 @@ hr { height: 1px; border-width: 0; }
      <x>0</x>
      <y>0</y>
      <width>603</width>
-     <height>24</height>
+     <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout_Qt"/>
+   </widget>
+   <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionAbout_Qt">
+   <property name="icon">
+    <iconset resource="../resource/icons.qrc">
+     <normaloff>:/icon/About-Qt.svg</normaloff>:/icon/About-Qt.svg</iconset>
+   </property>
+   <property name="text">
+    <string>About Qt</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
