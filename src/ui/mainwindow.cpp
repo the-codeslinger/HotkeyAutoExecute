@@ -39,6 +39,7 @@ MainWindow::MainWindow(
     // Form designer wouldn't pick up on these slots...
     connect(ui_->enableSpecialKeysCheck, &QCheckBox::toggled, this, &MainWindow::toggleSpecialKeys);
     connect(ui_->removeHotkeyButton, &QPushButton::clicked, this, &MainWindow::removeHotkey);
+    connect(ui_->actionAbout_Qt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
     
     configReader->read(availableHotkeysModel_);
 }
