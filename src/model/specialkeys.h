@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Qt>
+#include <keycodes.h>
 
 /**
  * This class is a direct representation of the manually selected special keys in the 
@@ -19,8 +19,8 @@ struct SpecialKeys
      */
     int code() const {
         if (print) {
-            return 0x2C; // VK_SNAPSHOT
+            return SNAPSHOT_KEY;
         }
-        return 0x00;
+        return UNDEFINED_KEY;
     }
 };

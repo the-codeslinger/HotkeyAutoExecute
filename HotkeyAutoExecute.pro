@@ -28,6 +28,7 @@ win32 {
 }
 
 HEADERS += \
+    src/model/keycodes.h \
     src/model/nativekeysequence.h \
     src/model/specialkeys.h \
     src/model/specialmodifiers.h \

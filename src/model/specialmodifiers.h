@@ -2,6 +2,8 @@
 
 #include <QSet>
 
+#include <keycodes.h>
+
 /**
  * This class is a direct representation of the manually selected modifier keys in the 
  * `MainWindow`. The values of the check boxes are stored in booleans that can be 
@@ -23,16 +25,16 @@ struct SpecialModifiers
     QSet<quint32> combinedCode() const {
         auto modifiers = QSet<quint32>{};
         if (shift) {
-            modifiers.insert(0xA0); // VK_LSHIFT;
+            modifiers.insert(LEFT_SHIFT_KEY);
         }
         if (control) {
-            modifiers.insert(0xA2); // VK_LCONTROL
+            modifiers.insert(LEFT_CONTROL_KEY);
         }
         if (meta) {
-            modifiers.insert(0x5B); // VK_LWIN
+            modifiers.insert(LEFT_META_KEY);
         }
         if (alt) {
-            modifiers.insert(0x12); // VK_MENU
+            modifiers.insert(ALT_KEY);
         }
         return modifiers;
     }
